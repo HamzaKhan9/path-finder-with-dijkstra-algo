@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.node {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #e5e7eb;
+  margin: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.node:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.node-start {
+  background-color: #22c55e;
+  border-color: #16a34a;
+}
+
+.node-finish {
+  background-color: #ef4444;
+  border-color: #dc2626;
+}
+
+.node-wall {
+  background-color: #1f2937;
+  border-color: #111827;
+  animation: scaleIn 0.2s ease;
+}
+
+.node-visited {
+  background-color: #93c5fd;
+  border-color: #60a5fa;
+  animation: visitedAnimation 1.5s ease;
+}
+
+.node-shortest-path {
+  background-color: #fbbf24;
+  border-color: #f59e0b;
+  animation: shortestPath 0.5s ease;
+}
+
+.grid-container {
+  overflow-x: auto;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: #1d4ed8;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #3b82f6;
+  }
+  75% {
+    transform: scale(1.2);
+    background-color: #60a5fa;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #93c5fd;
+  }
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: #f59e0b;
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: #fbbf24;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #fbbf24;
+  }
+}
