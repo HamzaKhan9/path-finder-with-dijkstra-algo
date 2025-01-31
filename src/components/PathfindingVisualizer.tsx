@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Navigation,
   Info,
@@ -33,7 +33,6 @@ export default function PathfindingVisualizer() {
   const [pathLength, setPathLength] = useState<number | null>(null);
   const [visitedNodes, setVisitedNodes] = useState<number | null>(null);
   const [executionTime, setExecutionTime] = useState<number | null>(null);
-  console.log("executionTime: ", executionTime);
   const [speed, setSpeed] = useState<"fast" | "normal" | "slow">("normal");
 
   useEffect(() => {
